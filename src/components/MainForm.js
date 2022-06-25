@@ -1,11 +1,30 @@
 import React from 'react'
-import Radio from './Fields/Radio';
-import Textfield from './Fields/Textfield';
+import Radio from './fields/Radio';
+import Textfield from './fields/Textfield';
 import maleIcon from '../images/mars-symbol.svg';
 import femaleIcon from '../images/venus-symbol.svg';
 import classicIcon from '../images/card.svg';
 
 function MainForm() {
+
+    const [state, setState] = React.useState({
+        fullname: '',
+        gender: '',
+        dob: '',
+        email: '',
+        mobile: '',
+        customerId: '',
+        membership: '',
+    });
+
+    console.log(state);
+
+    const handleChange = (e) => {
+        setState({
+            ...state,
+            [e.target.name] : e.target.value
+        })
+    }
 
     const gender = [
         {
@@ -38,6 +57,19 @@ function MainForm() {
         }
     ]
 
+    const handleClear = () => {
+        setState({
+            ...state,
+            fullname: '',
+            gender: '',
+            dob: '',
+            email: '',
+            mobile: '',
+            customerId: '',
+            membership: '',
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -45,15 +77,15 @@ function MainForm() {
     return (
         <div className="w-3/5 mx-auto my-24">
             <form onSubmit={handleSubmit}>
-                <Textfield name="fullname" type="text" label="Name" />
+                <Textfield handleChange={handleChange} name="fullname" type="text" label="Name" value={state.fullname} />
                 <Radio options={gender} label="Gender"  name="gender"  />
-                <Textfield name="dob" type="date" label="Date of Birth" />
-                <Textfield name="email" type="email" label="Email" />
-                <Textfield name="mobile" type="text" label="Mobile" />
-                <Textfield name="customerId" type="text" label="Customer ID" />
+                <Textfield handleChange={handleChange} name="dob" type="date" label="Date of Birth" value={state.dob} />
+                <Textfield handleChange={handleChange} name="email" type="email" label="Email" value={state.email} />
+                <Textfield handleChange={handleChange} name="mobile" type="text" label="Mobile" value={state.mobile} />
+                <Textfield handleChange={handleChange} name="customerId" type="text" label="Customer ID" value={state.customerId} />
                 <Radio options={membership} label="Membership"  name="membership"  />
                 <div className="text-right pt-12 font-medium">
-                    <button className="text-charcoal-grey-900 rounded-md py-3 uppercase px-8 bg-slate-200 mr-3">Cancel</button>
+                    <button onClick={handleClear} className="text-charcoal-grey-900 rounded-md py-3 uppercase px-8 bg-slate-200 mr-3">Cancel</button>
                     <button type="submit" className="text-white-100 rounded-md py-3 uppercase px-12 bg-blue-green-900">Save</button>
                 </div>
             </form>
