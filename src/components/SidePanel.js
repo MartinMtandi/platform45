@@ -41,8 +41,8 @@ function SidePanel({setSvgState, svgState}) {
         <img className="block mx-auto" src={face} alt="face" />
       </div>
       <div className="h-3/5 text-center py-24">
-        <h2 className="font-bold text-4xl text-charcoal-grey-900">Front-end challenge!</h2>
-        <p className="text-charcoal-grey-900 text-2xl mt-10 mb-16">This is a design that you will need to <br /> code up and impress us.</p>
+        <h2 className="font-bold md:text-4xl text-3xl text-charcoal-grey-900">Front-end challenge!</h2>
+        <p className="text-charcoal-grey-900 text-xl md:text-2xl mt-10 mb-16">This is a design that you will need to <br /> code up and impress us.</p>
         <button onClick={handleAnimate} className="focus:outline-none bg-charcoal-grey-900 rounded-full inline-flex items-center justify-center w-16 h-16">
           <motion.svg className={`h-8 w-8 ${(svgState.point === 'left') ? 'ml-5 mt-1' : 'ml-0 mt-0'} `} xmlns="http://www.w3.org/2000/svg" width="17" height="29" viewBox="0 0 17 29"
             variants={svgVariants}

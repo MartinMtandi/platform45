@@ -4,6 +4,7 @@ import Textfield from './fields/Textfield';
 import maleIcon from '../images/mars-symbol.svg';
 import femaleIcon from '../images/venus-symbol.svg';
 import classicIcon from '../images/card.svg';
+import { motion } from 'framer-motion';
 
 function MainForm() {
 
@@ -78,7 +79,12 @@ function MainForm() {
     }
     
     return (
-        <div className="w-3/5 mx-auto my-24">
+        <motion.div 
+            className="md:w-3/5 px-8 md:px-0 mx-auto my-24"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 1.1}}
+        >
             <form onSubmit={handleSubmit}>
                 <Textfield handleChange={handleChange} name="fullname" type="text" label="Name" value={state.fullname} />
                 <Radio handleChange={handleChange} options={gender} label="Gender"  name="gender" value={state.gender}  />
@@ -88,11 +94,11 @@ function MainForm() {
                 <Textfield handleChange={handleChange} name="customerId" type="text" label="Customer ID" value={state.customerId} />
                 <Radio handleChange={handleChange} options={membership} label="Membership"  name="membership" value={state.membership}  />
                 <div className="text-right pt-12 font-medium">
-                    <button onClick={handleClear} className="text-charcoal-grey-900 rounded-md py-3 uppercase px-8 bg-slate-200 mr-3">Cancel</button>
-                    <button type="submit" className="text-white-100 rounded-md py-3 uppercase px-12 bg-blue-green-900">Save</button>
+                    <button onClick={handleClear} className="my-3 md:my-0 w-full md:w-fit text-charcoal-grey-900 rounded-md py-3 uppercase px-8 bg-slate-200 mr-3">Cancel</button>
+                    <button type="submit" className="sm:block md:inline w-full md:w-fit my-3 md:my-0 text-white-100 rounded-md py-3 uppercase px-12 bg-blue-green-900">Save</button>
                 </div>
             </form>
-        </div>
+        </motion.div>
     )
 }
 
