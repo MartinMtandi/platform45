@@ -17,8 +17,6 @@ function MainForm() {
         membership: 'classic',
     });
 
-    console.log(state);
-
     const handleChange = (e) => {
         setState({
             ...state,
