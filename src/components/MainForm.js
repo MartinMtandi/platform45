@@ -2,8 +2,11 @@ import React from 'react'
 import Radio from './fields/Radio';
 import Textfield from './fields/Textfield';
 import maleIcon from '../images/mars-symbol.svg';
+import maleWhiteIcon from '../images/mars-symbol--white.svg';
+import femaleWhiteIcon from '../images/venus-symbol--white.svg';
 import femaleIcon from '../images/venus-symbol.svg';
 import classicIcon from '../images/card.svg';
+import cardWhite from '../images/card--white.svg';
 import { motion } from 'framer-motion';
 
 function MainForm() {
@@ -30,13 +33,15 @@ function MainForm() {
             id: 1,
             label: 'Male',
             value: 'male',
-            icon: maleIcon
+            icon: maleIcon,
+            active: maleWhiteIcon
         },
         {
             id: 2,
             label: 'Female',
             value: 'female',
-            icon: femaleIcon
+            icon: femaleIcon,
+            active: femaleWhiteIcon
         }
     ];
 
@@ -45,19 +50,22 @@ function MainForm() {
             id: 1,
             label: 'Classic',
             value: 'classic',
-            icon: classicIcon
+            icon: classicIcon,
+            active: cardWhite
         },
         {
             id: 2,
             label: 'Silver',
             value: 'silver',
-            icon: classicIcon
+            icon: classicIcon,
+            active: cardWhite
         },
         {
             id: 3,
             label: 'Gold',
             value: 'gold',
-            icon: classicIcon
+            icon: classicIcon,
+            active: cardWhite
         }
     ]
 
@@ -80,7 +88,7 @@ function MainForm() {
     
     return (
         <motion.div 
-            className="md:w-3/5 px-8 md:px-0 mx-auto my-24"
+            className="lg:w-3/5 px-8 lg:px-0 mx-auto my-8 lg:my-24 md:my-12"
             id="form"
             initial={{opacity: 0}}
             animate={{opacity: 1}}
