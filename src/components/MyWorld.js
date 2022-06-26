@@ -5,6 +5,7 @@ function MyWorld() {
   return (
     <motion.div 
         className="bg-tangerine-900 md:h-screen"
+        id="about"
         initial={{x: -100, opacity: 0}}
         animate={{x: 0, opacity: 1}}
         transition={{duration: 0.9}}

@@ -81,6 +81,7 @@ function MainForm() {
     return (
         <motion.div 
             className="md:w-3/5 px-8 md:px-0 mx-auto my-24"
+            id="form"
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 1.1}}

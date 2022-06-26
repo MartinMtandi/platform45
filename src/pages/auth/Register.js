@@ -63,7 +63,7 @@ function Register() {
         <SidePanel svgState={svgState} setSvgState={setSvgState} />
       </div>
       <div className="md:col-span-3">
-        {(svgState.point === 'right') ? <MainForm /> : <MyWorld />}
+        {(svgState.point === 'right' || svgState.point === 'bottom') ? <MainForm /> : <MyWorld />}
       </div>
     </div>
   )
