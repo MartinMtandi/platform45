@@ -46,7 +46,7 @@ function Register() {
         },
         point: 'right'
       })
-    }
+    } // eslint-disable-next-line
   }, [screenSize.dynamicWidth]);
 
   React.useEffect(() => {
@@ -54,7 +54,7 @@ function Register() {
 
     return (() => {
       window.removeEventListener('resize', setDimension);
-    })
+    }) // eslint-disable-next-line
   }, [screenSize.dynamicWidth])
 
   return (
@@ -63,7 +63,7 @@ function Register() {
         <SidePanel svgState={svgState} setSvgState={setSvgState} />
       </div>
       <div className="md:col-span-3">
-        {(svgState.point === 'right' || svgState.point === 'bottom') ? <MainForm /> : <MyWorld />}
+        {(svgState.point === 'right' || svgState.point === 'bottom') ? <MainForm /> : <MyWorld screenSize={screenSize.dynamicWidth} />}
       </div>
     </div>
   )

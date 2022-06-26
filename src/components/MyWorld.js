@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-function MyWorld() {
+function MyWorld({screenSize}) {
+  const initialObject = (screenSize <= 420) ? {y: -100, opacity: 0} : {x: -100, opacity: 0};
+  const initialAnimation = (screenSize <= 420) ? {y: 0, opacity: 1} : {x: 0, opacity: 1};
+
   return (
     <motion.div 
         className="bg-tangerine-900 md:h-screen"
         id="about"
-        initial={{x: -100, opacity: 0}}
-        animate={{x: 0, opacity: 1}}
+        initial={initialObject}
+        animate={initialAnimation}
         transition={{duration: 0.9}}
     >
         <div  className="md:w-3/5 md:mx-auto px-4 md:px-0 py-36">
