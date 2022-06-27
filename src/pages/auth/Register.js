@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React from 'react'
 import MainForm from '../../components/MainForm'
 import MyWorld from '../../components/MyWorld';
 import SidePanel from '../../components/SidePanel';
@@ -18,11 +18,11 @@ function Register() {
     dynamicWidth: window.innerWidth,
   });
 
-  const setDimension = useCallback(() => {
+  const setDimension = () => {
     getDimension({
       dynamicWidth: window.innerWidth,
     })
-  }, [window.innerWidth]);
+  }
 
   React.useEffect(() => {
     if(screenSize.dynamicWidth <= 420){
